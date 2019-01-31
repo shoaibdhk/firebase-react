@@ -11,14 +11,13 @@ const initState = {
 export const reducer = (state = initState, { type, payload }) => {
   switch (type) {
     case GET_USERS:
-      let lists = payload;
       return {
-        lists
+        ...state,
+        lists: [...payload]
       };
     case ADD_USER:
       return {
-        ...state,
-        lists: [...state.lists]
+        ...state
       };
     case REMOVE_USER:
       return {

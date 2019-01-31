@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getUsers, removeUser } from './store/user';
-import firestore from './firebase';
 
 class Users extends Component {
   componentDidMount() {
@@ -9,7 +8,7 @@ class Users extends Component {
   }
   render() {
     const { lists } = this.props;
-    console.log(this.props.lists);
+    console.log(lists);
     return (
       <ul>
         {lists.map(list => (
